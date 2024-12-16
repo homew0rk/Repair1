@@ -1,0 +1,57 @@
+﻿@page
+@model Repair1.Pages.Staffs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-white">Персонал</h1> <!-- Добавлен класс text-white -->
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Добавить</a> <!-- Добавлен класс для кнопки -->
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-white">
+                <!-- Добавлен класс text-white -->
+                @Html.DisplayNameFor(model => model.Staff[0].StaffName)
+            </th>
+            <th class="text-white">
+                <!-- Добавлен класс text-white -->
+                @Html.DisplayNameFor(model => model.Staff[0].Email)
+            </th>
+            <th class="text-white">
+                <!-- Добавлен класс text-white -->
+                @Html.DisplayNameFor(model => model.Staff[0].Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Staff)
+        {
+            <tr>
+                <td class="text-white">
+                    <!-- Добавлен класс text-white -->
+                    @Html.DisplayFor(modelItem => item.StaffName)
+                </td>
+                <td class="text-white">
+                    <!-- Добавлен класс text-white -->
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td class="text-white">
+                    <!-- Добавлен класс text-white -->
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.StaffId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.StaffId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.StaffId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

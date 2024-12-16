@@ -1,0 +1,67 @@
+
+
+
+body {
+    background-color: #000000; 
+    color: #ffffff; 
+}
+
+
+.navbar {
+    background-color: #1f1f1f; 
+    border-bottom: 1px solid #333; 
+}
+
+.nav-link {
+    color: #ffffff; 
+}
+
+    .nav-link:hover {
+        color: #00ccff; 
+    }
+
+/* Стили для футера */
+.footer {
+    background-color: #1f1f1f; 
+    color: #b0b0b0; 
+}
+
+
+.container {
+    background-color: #181818; 
+    border-radius: 5px; 
+    padding: 20px; 
+}
+
+
+.btn {
+    background-color: #007bff; 
+    color: white; 
+}
+
+    .btn:hover {
+        background-color: #0056b3; 
+    }
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff; 
+}
+
+a {
+    color: #00ccff; 
+}
+
+    a:hover {
+        color: #ffffff;
+    }
+
+
+.navbar-brand,
+.footer a {
+    color: #ffffff !important; 
+}
+
+    .footer a:hover {
+        color: #00ccff !important; 
+    }

@@ -1,0 +1,51 @@
+﻿@page
+@model Repair1.Pages.Services.IndexModel
+
+@{
+    ViewData["Title"] = "Индекс";
+}
+
+<h1 class="text-white">Услуги</h1> <!-- Заголовок на русском языке -->
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Добавить</a> <!-- Кнопка на русском языке -->
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-white"> <!-- Заголовок "Название услуги" -->
+                @Html.DisplayNameFor(model => model.Service[0].ServiceName)
+            </th>
+            <th class="text-white"> <!-- Заголовок "Описание" -->
+                @Html.DisplayNameFor(model => model.Service[0].Description)
+            </th>
+            <th class="text-white"> <!-- Заголовок "Стоимость" -->
+                @Html.DisplayNameFor(model => model.Service[0].Cost)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Service) {
+            <tr>
+                <td class="text-white"> <!-- Название услуги -->
+                    @Html.DisplayFor(modelItem => item.ServiceName)
+                </td>
+                <td class="text-white"> <!-- Описание услуги -->
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td class="text-white"> <!-- Стоимость услуги -->
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ServiceId">Редактировать</a> | <!-- Ссылка на редактирование -->
+                    <a asp-page="./Details" asp-route-id="@item.ServiceId">Детали</a> | <!-- Ссылка на детали -->
+                    <a asp-page="./Delete" asp-route-id="@item.ServiceId">Удалить</a> <!-- Ссылка на удаление -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

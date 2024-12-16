@@ -1,0 +1,72 @@
+﻿@page
+@model Repair1.Pages.Requests.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-white">Задачи</h1> <!-- Заголовок на русском языке с белым текстом -->
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Добавить</a> <!-- Кнопка на русском языке -->
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-white">
+                <!-- Белый текст заголовка -->
+                @Html.DisplayNameFor(model => model.Request[0].RequestName)
+            </th>
+            <th class="text-white">
+                <!-- Белый текст заголовка -->
+                @Html.DisplayNameFor(model => model.Request[0].Description)
+            </th>
+            <th class="text-white">
+                <!-- Белый текст заголовка -->
+                @Html.DisplayNameFor(model => model.Request[0].ServiceID)
+            </th>
+            <th class="text-white">
+                <!-- Белый текст заголовка -->
+                @Html.DisplayNameFor(model => model.Request[0].StaffId)
+            </th>
+            <th class="text-white">
+                <!-- Белый текст заголовка -->
+                @Html.DisplayNameFor(model => model.Request[0].ClientId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Request)
+        {
+            <tr>
+                <td class="text-white">
+                    <!-- Белый текст ячейки -->
+                    @Html.DisplayFor(modelItem => item.RequestName)
+                </td>
+                <td class="text-white">
+                    <!-- Белый текст ячейки -->
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td class="text-white">
+                    <!-- Белый текст ячейки -->
+                    @Html.DisplayFor(modelItem => item.ServiceID)
+                </td>
+                <td class="text-white">
+                    <!-- Белый текст ячейки -->
+                    @Html.DisplayFor(modelItem => item.StaffId)
+                </td>
+                <td class="text-white">
+                    <!-- Белый текст ячейки -->
+                    @Html.DisplayFor(modelItem => item.ClientId)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.RequestId">Редактировать</a> |
+                    <a asp-page="./Details" asp-route-id="@item.RequestId">Детали</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.RequestId">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
